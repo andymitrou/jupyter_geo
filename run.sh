@@ -1,3 +1,14 @@
+export dirname=data
+
+if [ ! -d "$dirname" ]
+then
+    echo "Directory doesn't exists"
+    mkdir ./$dirname
+    echo "File created"
+else
+    echo "data directory exists"
+fi
+
 docker container stop jupyter_docker
 docker container rm jupyter_docker
 docker build --no-cache -t jupyter_docker .
